@@ -27,7 +27,7 @@ class Chatbot extends Component {
     this.state ={
         messages: [],
         showBot: false,
-        chat: false
+        chatstate: false
     };
 
   
@@ -64,7 +64,7 @@ class Chatbot extends Component {
    show2(event){
     event.preventDefault();
     event.stopPropagation();
-     this.setState({chat: true});
+     this.setState({chatstate: true});
    }
 
    hide(event){
@@ -77,7 +77,7 @@ class Chatbot extends Component {
    hide2(event){
     event.preventDefault();
     event.stopPropagation();
-    this.setState({chat: false});
+    this.setState({chatstate: false});
  
   }
 
@@ -128,7 +128,7 @@ class Chatbot extends Component {
                  </ul>
               </div>
              </nav>
-             // C'est ici qu'il faut introduire des conditions
+           
              <QuickReply/>
            
                <div id="chatbot" style ={{height:388,width:'100%',overflow:'auto'}}>
@@ -141,7 +141,7 @@ class Chatbot extends Component {
                     
                     <div className='s12'>
                     <img  style={{ height:45 , width:45 }} src={require("../../assets/Group12.png")}/> 
-                  <img onClick={this.hide2} style={{ height:45 , width:60 }} src={require("../../assets/Group13.png")}/> 
+                    <a href='/' onClick={this.show2} ><img style={{ height:45 , width:60 }} src={require("../../assets/Group13.png")}/></a>
                     </div>
             </div>
         );
