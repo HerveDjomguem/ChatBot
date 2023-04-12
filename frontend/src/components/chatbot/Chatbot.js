@@ -3,6 +3,8 @@
 import React, {Component} from 'react';
 import Message from './Message';
 import './stylebot.css';
+import axios from 'axios';
+
 //import '../../../public/assets';
 import QuickReply from './QuickReply';
 
@@ -19,9 +21,9 @@ class Chatbot extends Component {
 
 
     this.hide = this.hide.bind(this);
-    this.hide2 = this.hide.bind(this);
+    this.hide2 = this.hide2.bind(this);
     this.show = this.show.bind(this);
-    this.show2 = this.show.bind(this);
+    this.show2 = this.show2.bind(this);
 
 
     this.state ={
@@ -29,22 +31,24 @@ class Chatbot extends Component {
         showBot: false,
         chatstate: false
     };
-
-  
-
    }
+ 
+   async df_text_query(queryText){
+    let msg;
+    let says = {
+      speaks: 'me',
+      msg: {
+          text :{
+              text: queryText
+          }
+       }
+     };
 
-  
-  /* async componentDidMount(){
-     this.df_event_query('Welcome');
-     await this.resolveAfterXSeconds(1);
-     if(window.location.pathname ==='/shop' ){
-      await this.resolveAfterXSeconds(1);
-      this.df_event_query('WELCOME_SHOP');
-      this.setState({ showBot: true});
-     }
-    
-   };*/
+    this.setState({messages: [...this.state.messages, says]});
+       
+ }
+
+
 
    
    componentDidUpdate(){
@@ -129,18 +133,32 @@ class Chatbot extends Component {
               </div>
              </nav>
            
-             <QuickReply/>
+           
+             {  
+                this.state.chatstate === false &&
+                <QuickReply/>
+              }
+              
+              {console.log(this.state.chatstate)}
            
                <div id="chatbot" style ={{height:388,width:'100%',overflow:'auto'}}>
                
-                   {this.renderMessages(this.state.messages)}
+                   {
+
+                    this.renderMessages(this.state.messages)
+                    }
                   <div ref={(el) => {this.messagesEnd = el;}}
                       style={{ float: 'left', clear:'both'}}>
                   </div>
                </div> 
-                    
+              {
+                this.state.chatstate === true && 
+                <div className='s12'>
+               <input style={{margin: 0, paddingLeft:'1%', paddingRight:'1%', width:'98%'}} placeholder='Saisir un message:' type="text" ref={(input)=> {this.talkInput = input;}} onKeyPress={this._handleInputKeyPress}/>
+               </div>  
+               } 
                     <div className='s12'>
-                    <img  style={{ height:45 , width:45 }} src={require("../../assets/Group12.png")}/> 
+                    <a href='/' onClick={this.hide2} ><img  style={{ height:45 , width:45 }} src={require("../../assets/Group12.png")}/> </a>
                     <a href='/' onClick={this.show2} ><img style={{ height:45 , width:60 }} src={require("../../assets/Group13.png")}/></a>
                     </div>
             </div>
