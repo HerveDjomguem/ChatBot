@@ -19,11 +19,15 @@ class Chatbot extends Component {
 
 
     this.hide = this.hide.bind(this);
+    this.hide2 = this.hide.bind(this);
     this.show = this.show.bind(this);
+    this.show2 = this.show.bind(this);
+
 
     this.state ={
         messages: [],
         showBot: false,
+        chat: false
     };
 
   
@@ -55,13 +59,25 @@ class Chatbot extends Component {
     event.preventDefault();
     event.stopPropagation();
      this.setState({showBot: true});
- 
+   }
+
+   show2(event){
+    event.preventDefault();
+    event.stopPropagation();
+     this.setState({chat: true});
    }
 
    hide(event){
     event.preventDefault();
     event.stopPropagation();
     this.setState({showBot: false});
+ 
+  }
+
+   hide2(event){
+    event.preventDefault();
+    event.stopPropagation();
+    this.setState({chat: false});
  
   }
 
@@ -89,6 +105,7 @@ class Chatbot extends Component {
 
    _handleInputKeyPress(e){
         if(e.key === 'Enter'){
+            //Bien revoir celui-ci
             this.df_text_query(e.target.value);           
             e.target.value = '';
         }
@@ -111,7 +128,9 @@ class Chatbot extends Component {
                  </ul>
               </div>
              </nav>
+             // C'est ici qu'il faut introduire des conditions
              <QuickReply/>
+           
                <div id="chatbot" style ={{height:388,width:'100%',overflow:'auto'}}>
                
                    {this.renderMessages(this.state.messages)}
@@ -122,17 +141,17 @@ class Chatbot extends Component {
                     
                     <div className='s12'>
                     <img  style={{ height:45 , width:45 }} src={require("../../assets/Group12.png")}/> 
-                    <img  style={{ height:45 , width:60 }} src={require("../../assets/Group13.png")}/> 
+                  <img onClick={this.hide2} style={{ height:45 , width:60 }} src={require("../../assets/Group13.png")}/> 
                     </div>
             </div>
         );
     }else {
       return(
-        <div style={{height:80,width:80,position:'absolute', bottom: 0, right:25, border:'1px solid lightgrey'}}>
+        <div style={{position:'absolute', bottom: 0, right:25}}>
          <nav>
           <div className='nav-wrapper'>
              <ul id='nav-mobile' className='right hide-on-med-and-down'>
-                  <li><a href='/' onClick={this.show}>ChatBot</a></li>
+                  <a href='/' onClick={this.show}><img  style={{ height:40 , width:40 }} src={require("../../assets/Group14.png")}/></a>
                  </ul>
           </div>
          </nav>
