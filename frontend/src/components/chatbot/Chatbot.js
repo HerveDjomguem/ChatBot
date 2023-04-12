@@ -2,13 +2,11 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 
-import Cookies from 'universal-cookie';
 import {v4 as uuid} from 'uuid'
 
 import Message from './Message';
 
 
-const cookies = new Cookies();
 
 class Chatbot extends Component {
    messagesEnd;
@@ -18,7 +16,7 @@ class Chatbot extends Component {
     super(props);
     // Le binding es necessaire pour que la méthode 'this' marche sur le 'callback'
     this._handleInputKeyPress = this._handleInputKeyPress.bind(this);
-    this._handleQuickReplyPayload =this._handleQuickReplyPayload.bind(this);
+
 
     this.hide = this.hide.bind(this);
     this.show = this.show.bind(this);
@@ -28,11 +26,7 @@ class Chatbot extends Component {
         showBot: false,
     };
 
-    //cookie accesible sur toutes les pages
-    if(cookies.get('userID') === undefined){
-      cookies.set('userID', uuid(), {path: '/'});
-    }
-     console.log(cookies.get('userID')); 
+  
 
    }
 
