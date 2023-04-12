@@ -1,14 +1,14 @@
+/* eslint-disable jsx-a11y/alt-text */
 //chatbot(causer avec un robot)
 import React, {Component} from 'react';
-import axios from 'axios';
-
-import {v4 as uuid} from 'uuid'
-
 import Message from './Message';
-
-
+import './stylebot.css';
+//import '../../../public/assets';
+import QuickReply from './QuickReply';
 
 class Chatbot extends Component {
+
+   
    messagesEnd;
    talkInput;
 
@@ -94,18 +94,24 @@ class Chatbot extends Component {
         }
    }
 
+    
+
     render(){
       if(this.state.showBot){
         return(
-            <div style={{height:500,width:400,position:'absolute', bottom: 0, right:0, border:'1px solid lightgrey'}}>
+            <div className='cardre'>
              <nav>
-              <div className='nav-wrapper'>
-                 <a href='/' className='brand-logo'>ChatBot</a>
-                 <ul id='nav-mobile' className='right hide-on-med-and-down'>
-                  <li><a href='/' onClick={this.hide}>Fermer</a></li>
+              <div className='header'>
+                <div>
+                <a href='/' onClick={this.hide}>  <img  style={{ height:40 , width:40 }} src={require("../../assets/arrow-left.png")}/></a>
+                    <a href='/' className='brand-logo'><img  style={{ height:40 , width:120 }} src={require("../../assets/Frame39.png")}/> </a>
+                </div>
+                    <ul id='nav-mobile' >
+                  <a href='/' onClick={this.hide}><img  style={{ height:40 , width:40 }} src={require("../../assets/Closebutton.png")}/> </a>
                  </ul>
               </div>
              </nav>
+             <QuickReply/>
                <div id="chatbot" style ={{height:388,width:'100%',overflow:'auto'}}>
                
                    {this.renderMessages(this.state.messages)}
@@ -113,9 +119,11 @@ class Chatbot extends Component {
                       style={{ float: 'left', clear:'both'}}>
                   </div>
                </div> 
-               <div className='s12'>
-               <input style={{margin: 0, paddingLeft:'1%', paddingRight:'1%', width:'98%'}} placeholder='Saisir un message:' type="text" ref={(input)=> {this.talkInput = input;}} onKeyPress={this._handleInputKeyPress}/>
-               </div>
+                    
+                    <div className='s12'>
+                    <img  style={{ height:45 , width:45 }} src={require("../../assets/Group12.png")}/> 
+                    <img  style={{ height:45 , width:60 }} src={require("../../assets/Group13.png")}/> 
+                    </div>
             </div>
         );
     }else {
