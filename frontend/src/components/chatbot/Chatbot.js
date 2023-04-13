@@ -94,6 +94,8 @@ class Chatbot extends Component {
     }  
    };
 
+
+
    renderMessages(stateMessages){
     if(stateMessages){
       //console.log('setmessages', stateMessages)
@@ -136,7 +138,7 @@ class Chatbot extends Component {
            
              {  
                 this.state.chatstate === false &&
-                <QuickReply/>
+                <QuickReply bool={this.show2} />
               }
               
               {console.log(this.state.chatstate)}
@@ -145,6 +147,7 @@ class Chatbot extends Component {
                
                    {
 
+                    this.state.chatstate === true && 
                     this.renderMessages(this.state.messages)
                     }
                   <div ref={(el) => {this.messagesEnd = el;}}

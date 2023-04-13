@@ -3,7 +3,7 @@ import React from 'react';
 import './stylebot.css';
 
 
-const QuickReply = () =>{
+const QuickReply = (props) =>{
     return (
         <div className='quick'> 
         <div>
@@ -12,7 +12,7 @@ const QuickReply = () =>{
         </div>
            
          <div >
-          <img  style={{ height:40 , width:45 }} src={require("../../assets/next.png")}/> 
+         <a href='/' onClick={props.bool} > <img  style={{ height:40 , width:45 }} src={require("../../assets/next.png")} alt=''/> </a>
           </div>
         </div>
         
