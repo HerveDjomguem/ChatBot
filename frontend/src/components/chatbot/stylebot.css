@@ -36,3 +36,27 @@
     box-shadow: 5px 9px 9px #888888;
     padding: 5px;
 }
+
+.col_s10{
+    padding: 25px;
+    position: absolute;
+    right: 0;
+    border-radius: 20px;
+    background-color: #888888;
+    margin-top: 20px;
+    margin-bottom: 80px;
+    bottom: 20;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.col-s2{
+    
+    position: absolute;
+    right: 0;
+    margin-top: 100px;
+}
+.yooo{
+    margin-bottom: 100px;
+}
