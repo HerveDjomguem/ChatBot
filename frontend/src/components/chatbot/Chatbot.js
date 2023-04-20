@@ -126,7 +126,6 @@ class Chatbot extends Component {
              <nav>
               <div className='header'>
                 <div>
-                <a href='/' onClick={this.hide}>  <img  style={{ height:40 , width:40 }} src={require("../../assets/arrow-left.png")}/></a>
                     <a href='/' className='brand-logo'><img  style={{ height:40 , width:120 }} src={require("../../assets/Frame39.png")}/> </a>
                 </div>
                     <ul id='nav-mobile' >

@@ -38,7 +38,7 @@
 }
 
 .col_s10{
-    padding: 25px;
+    /* padding: 25px;
     position: absolute;
     right: 0;
     border-radius: 20px;
@@ -48,15 +48,30 @@
     bottom: 20;
     white-space: nowrap;
     overflow: hidden;
-    text-overflow: ellipsis;
+    text-overflow: ellipsis; */
 }
 
 .col-s2{
     
-    position: absolute;
-    right: 0;
-    margin-top: 100px;
+    /* position: absolute; */
+    /* right: 0; */
+    /* margin-top: 100px; */
 }
 .yooo{
-    margin-bottom: 100px;
+    margin-bottom: 10px;
+}
+
+.col-s2 {
+    text-align: right;
+}
+
+.col_s10 {
+	padding: 8px;
+	background-color: #cdcdcd;
+	border-radius: 8px;
+}
+
+.yooo .card-panel {
+	display: flex;
+	justify-content: end;
 }
