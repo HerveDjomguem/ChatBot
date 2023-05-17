@@ -156,7 +156,7 @@ class Chatbot extends Component {
               {
                 this.state.chatstate === true && 
                 <div className='s12'>
-               <input style={{margin: 0, paddingLeft:'1%', paddingRight:'1%', width:'98%'}} placeholder='Saisir un message:' type="text" ref={(input)=> {this.talkInput = input;}} onKeyPress={this._handleInputKeyPress}/>
+               <input style={{margin: 0, paddingLeft:'1%', paddingRight:'1%', width:'98%',height:30,borderRadius:20,fontFamily:'Nunito'}} placeholder='Saisir un message:' type="text" ref={(input)=> {this.talkInput = input;}} onKeyPress={this._handleInputKeyPress}/>
                </div>  
                } 
                     <div className='s12'>

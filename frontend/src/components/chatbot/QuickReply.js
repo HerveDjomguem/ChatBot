@@ -6,7 +6,7 @@ import './stylebot.css';
 const QuickReply = (props) =>{
     return (
         <div className='quick'> 
-        <div>
+        <div className='blod'>
         <b> Send us a message</b> <br/>
          We will reply as soon as we can
         </div>
