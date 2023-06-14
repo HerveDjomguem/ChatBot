@@ -36,7 +36,7 @@ class Chatbot extends Component {
    async df_text_query(queryText){
     let msg;
     let says = {
-      speaks: 'me',
+      speaks: 'Moi',
       msg: {
           text :{
               text: queryText
@@ -64,7 +64,7 @@ class Chatbot extends Component {
             console.log(res)
              console.log('moiaujourdhui',res.data.fulfillmentMessages[0])
               says = {
-                speaks : 'bot',
+                speaks : 'Bot',
                 msg: msg
               };
             }

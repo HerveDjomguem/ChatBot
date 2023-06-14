@@ -8,7 +8,7 @@ const Message = (props) => {
         <div className="yooo">
             <div className="card-panel grey lighten-5 z-depth-1">
               <div className="row valign-wrapper">
-               {props.speaks==='bot' &&
+               {props.speaks==='Bot' &&
                 <>
                     <div className="col-s1">
                     <a href="/">{props.speaks}</a>
@@ -21,7 +21,7 @@ const Message = (props) => {
                 </>
               }
               
-              {props.speaks==='me' &&
+              {props.speaks==='Moi' &&
                 <>
                     <div className="col-s2">
                     <a href='/'>{props.speaks}</a>
