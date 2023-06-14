@@ -10,10 +10,10 @@ const Message = (props) => {
               <div className="row valign-wrapper">
                {props.speaks==='bot' &&
                 <>
-                    <div className="col s2">
-                    <a href="/" className="btn-floating btn-large waves-effect waves-light red">{props.speaks}</a>
+                    <div className="col-s1">
+                    <a href="/">{props.speaks}</a>
                     </div>
-                    <div className="col s10">
+                    <div className="col_s10">
                       <span className="black-text1">
                         {props.text}
                       </span>
@@ -24,10 +24,10 @@ const Message = (props) => {
               {props.speaks==='me' &&
                 <>
                     <div className="col-s2">
-                    <a href='/' className="btn-floating btn-large waves-effect waves-light red">{props.speaks}</a>
+                    <a href='/'>{props.speaks}</a>
                     </div>
                   <div className="col_s10">
-                      <span className="black-text2">
+                      <span className="black-text1">
                         {props.text}
                       </span>
                     </div>
