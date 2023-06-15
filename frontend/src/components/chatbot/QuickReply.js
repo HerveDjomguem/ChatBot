@@ -7,8 +7,8 @@ const QuickReply = (props) =>{
     return (
         <div className='quick'> 
         <div className='blod'>
-        <b> Send us a message</b> <br/>
-         We will reply as soon as we can
+        <b> You are welcome</b> <br/>
+         Start a live chat 
         </div>
            
          <div >
