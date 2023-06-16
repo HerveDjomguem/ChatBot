@@ -48,7 +48,7 @@ class Chatbot extends Component {
     this.setState({messages: [...this.state.messages, says]});
     const res = await axios.post('/api/messages', {messageBody: queryText});
     if(res){
-      msg2 = res.data.messageBody;
+      msg2 = res.data.responseBody;
        console.log('moi15',msg2)
         says = {
           speaks : 'Bot',
