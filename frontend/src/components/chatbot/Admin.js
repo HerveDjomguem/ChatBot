@@ -4,7 +4,7 @@ import { Table} from 'react-bootstrap';
 import AllMessaages from './AllMessages';  
 import axios from 'axios';
 //Geré ce comportement bootstrap
-import "bootstrap/dist/css/bootstrap.min.css";
+//import "bootstrap/dist/css/bootstrap.min.css";
 
 const Admin = () => {
     const [empdata, empdatachange] = useState(null);
