@@ -8,14 +8,15 @@ import Auth from './chatbot/Auth';
 const App = () => (
         <div>
             <Router>
-            <div className='container'>
+            <div className='container'>  
       
             <Routes>
                     <Route exact path="/admin" element={<Admin/>} />
-                    <Route exact path="/chatbot" element={<Chatbot/>} />
-                    <Route exact path="" element={<Auth/>} />
+                    <Route exact path="/chatbotadmin" element={<Auth/>} />
+                    <Route exact path="/" element={<Chatbot/>} />
+                    <Route exact path="" element={<Chatbot/>} />
                 </Routes>
-               
+                <Chatbot/>
              </div>
             </Router> 
         </div>

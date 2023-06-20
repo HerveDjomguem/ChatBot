@@ -4,14 +4,14 @@ import { Table} from 'react-bootstrap';
 import AllMessaages from './AllMessages';  
 import axios from 'axios';
 //Geré ce comportement bootstrap
-import "bootstrap/dist/css/bootstrap.min.css";
+ import "bootstrap/dist/css/bootstrap.min.css";
 
 const Admin = () => {
     const [empdata, empdatachange] = useState(null);
 
     useEffect(() => {
         // verifier si c'est message-all
-        fetch("http://localhost:8080/api/message-all").then((res) => {
+        fetch("http://localhost:8080/api/messages-all").then((res) => {
             return res.json();
         }).then((resp) => {
             empdatachange(resp);
@@ -22,16 +22,20 @@ const Admin = () => {
 
     return (
         <Fragment>
+             <div className='centrer'>
+                    <h1>Welcome to the Admin Dashboard ! </h1>
+                </div>
             <div style={{margin: "10rem"}}>
+           
                 <div className="card-title">
-                    <h2>DASHBOARD ADMINISTRATEUR</h2>
+                    <h2>Messages History</h2>
                 </div>
               
                     <Table striped bordered hover size='5m'>
                         <thead >
                             <tr>
-                                <th>messageUser</th>
-                                <th>messageBot</th>
+                                <th>User message</th>
+                                <th>Bot message</th>
                                 <th>date</th>
                             </tr>
                         </thead>

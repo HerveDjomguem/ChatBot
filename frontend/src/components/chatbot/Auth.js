@@ -7,22 +7,29 @@ import './stylebot.css';
 
 const Auth = () => {
 
-    const[name,namechange]=useState("");
-    const[password,passwordchange]=useState("");
+    const[adminUsername,namechange]=useState("");
+    const[adminPassword,passwordchange]=useState("");
 
     const navigate=useNavigate();
 
     const handlesubmit=(e)=>{
         e.preventDefault();
-        const empdata={name,password};
+        const empdata={adminUsername,adminPassword};
+
+        console.log('format',empdata);
 
     fetch("http://localhost:8080/api/login",{
         method:"POST",
         headers:{"content-type":"application/json"},
         body:JSON.stringify(empdata)
       }).then((res)=>{
-        alert('Connecté avec success.')
-        navigate('/admin');
+        if(res.status == "200"){
+          alert('Connecté avec success.')
+          navigate('/admin');
+        }else{
+          alert('Mot de passe incorrect')
+        }
+       
       }).catch((err)=>{
         console.log(err.message)
       })
@@ -37,7 +44,7 @@ const Auth = () => {
                 <label>Nom de l'Admin</label>
                 <input
                   type="name"
-                  value={name} onChange={e=>namechange(e.target.value)}
+                  value={adminUsername} onChange={e=>namechange(e.target.value)}
                   className="form-control mt-1"
                   placeholder="Entrer votre nom"
                 />
@@ -46,7 +53,7 @@ const Auth = () => {
                 <label>Mot de passe</label>
                 <input
                   type="password"
-                  value={password} onChange={e=>passwordchange(e.target.value)}
+                  value={adminPassword} onChange={e=>passwordchange(e.target.value)}
                   className="form-control mt-1"
                   placeholder="Entrer mot de passe"
                 />
