@@ -9,19 +9,9 @@ import "bootstrap/dist/css/bootstrap.min.css";
 const Admin = () => {
     const [empdata, empdatachange] = useState(null);
 
- /*   useEffect( async() => {
-        try {
-            const res = await axios.get('/api/comments');
-          //  return res.json();
-            empdatachange(res);
-          } catch (error) {
-            console.log(error.message);
-          }
-        
-    }, [])*/
-
     useEffect(() => {
-        fetch("http://localhost:8080/api/login").then((res) => {
+        // verifier si c'est message-all
+        fetch("http://localhost:8080/api/message-all").then((res) => {
             return res.json();
         }).then((resp) => {
             empdatachange(resp);
