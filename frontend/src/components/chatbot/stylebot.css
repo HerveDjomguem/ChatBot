@@ -132,6 +132,10 @@
     color: rgb(34, 34, 34);
   }
 
+  .centrer{
+   text-align: center;
+  }
+
   .centrer1{
     font-size: 70px;
   }
@@ -142,3 +146,6 @@
    border-radius: 50%;
  }
 
+ .cote{
+  padding-left: 104%;
+ }
