@@ -182,12 +182,12 @@ class Chatbot extends Component {
               {
                 this.state.chatstate === true && 
                 <div className='s12'>
-               <input style={{margin: 0, paddingLeft:'1%', paddingRight:'1%', width:'98%',height:30,borderRadius:20,fontFamily:'Nunito'}} placeholder='Saisir un message:' type="text" ref={(input)=> {this.talkInput = input;}} onKeyPress={this._handleInputKeyPress}/>
+               <input style={{margin: 0, paddingLeft:'1%', paddingRight:'1%', width:'98%',height:30,borderRadius:90,fontFamily:'Nunito',borderColor: 'lightsteelblue'}} placeholder='Saisir un message:' type="text" ref={(input)=> {this.talkInput = input;}} onKeyPress={this._handleInputKeyPress}/>
                </div>  
                } 
                     <div className='s12'>
-                    <a href='/' onClick={this.hide2} ><img  style={{ height:45 , width:45 }} src={require("../../assets/Group12.png")}/> </a>
-                    <a href='/' onClick={this.show2} ><img style={{ height:45 , width:60 }} src={require("../../assets/Group13.png")}/></a>
+                    <a href='/'  onClick={this.hide2} ><img  style={{ height:45 , width:45 }} src={require("../../assets/Group12.png")}/> </a>
+                    <a href='/' onClick={this.show2} ><img style={{ height:50 , width:60 }} src={require("../../assets/Group13.png")}/></a>
                     </div>
             </div>
         );

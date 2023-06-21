@@ -3,6 +3,7 @@ import React, { Fragment, useEffect, useState } from 'react';
 import { Table} from 'react-bootstrap';
 import AllMessaages from './AllMessages';  
 import axios from 'axios';
+import { Link, useNavigate } from "react-router-dom";
 //Geré ce comportement bootstrap
  import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -23,7 +24,7 @@ const Admin = () => {
     return (
         <Fragment>
              <div className='centrer'>
-                    <h1>Welcome to the Admin Dashboard ! </h1>
+                    <h1 className='centrer1'>Welcome to the Admin Dashboard ! <Link to="/chatbotadmin" className="btn btn-primary">Se deconnecté</Link> </h1> 
                 </div>
             <div style={{margin: "10rem"}}>
            
