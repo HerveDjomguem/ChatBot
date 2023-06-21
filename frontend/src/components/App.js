@@ -16,7 +16,6 @@ const App = () => (
                     <Route exact path="/" element={<Chatbot/>} />
                     <Route exact path="" element={<Chatbot/>} />
                 </Routes>
-                <Chatbot/>
              </div>
             </Router> 
         </div>
