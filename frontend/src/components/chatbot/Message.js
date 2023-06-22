@@ -1,9 +1,10 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React from "react";
+import React, { useRef } from "react";
 import './stylebot.css';
-
+import NotificationSound from "../../assets/AUD-20230622-WA0008.mp3";
 
 const Message = (props) => {
+
     return(
         <div className="yooo">
             <div className="card-panel grey lighten-5 z-depth-1 container ">
@@ -18,6 +19,7 @@ const Message = (props) => {
                       <span className="black-text1">
                         {props.text}
                       </span>
+                      <audio  src={NotificationSound}  autoplay="autoplay"/>
                     </div>
                 </>
               }
@@ -35,7 +37,7 @@ const Message = (props) => {
                     </div>
                   <div className="col_s10">
                   <img className="ko" src={require("../../assets/user.png")}/>
-                    <span className="black-text1">
+                    <span  className="black-text1">
                       {props.text}
                       </span>
                     </div>
